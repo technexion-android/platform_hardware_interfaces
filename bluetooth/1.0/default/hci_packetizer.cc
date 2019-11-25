@@ -50,6 +50,11 @@ const hidl_vec<uint8_t>& HciPacketizer::GetPacket() const {
   return packet_;
 }
 
+void HciPacketizer::CbHciPacket(uint8_t *data, size_t len) {
+  packet_.setToExternal(data, len);
+  packet_ready_cb_();
+}
+
 void HciPacketizer::OnDataReady(int fd, HciPacketType packet_type) {
   switch (state_) {
     case HCI_PREAMBLE: {
