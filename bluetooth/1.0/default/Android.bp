@@ -39,6 +39,32 @@ cc_library_shared {
     ],
 }
 
+cc_library_shared {
+    name: "android.hardware.bluetooth@1.0-usb_impl",
+    defaults: ["hidl_defaults"],
+    vendor: true,
+    relative_install_path: "hw",
+    srcs: [
+        "bluetooth_hci.cc",
+        "bluetooth_address.cc",
+        "vendor_interface.cc",
+    ],
+    shared_libs: [
+        "android.hardware.bluetooth@1.0",
+        "libbase",
+        "libcutils",
+        "libhardware",
+        "libhidlbase",
+        "libhidltransport",
+        "liblog",
+        "libutils",
+    ],
+    static_libs: [
+        "android.hardware.bluetooth-async",
+        "android.hardware.bluetooth-hci-usb",
+    ],
+}
+
 cc_library_static {
     name: "android.hardware.bluetooth-async",
     vendor: true,
@@ -60,6 +86,25 @@ cc_library_static {
         "hci_packetizer.cc",
         "hci_protocol.cc",
         "h4_protocol.cc",
+        "mct_protocol.cc",
+    ],
+    export_include_dirs: ["."],
+    shared_libs: [
+        "libbase",
+        "libhidlbase",
+        "liblog",
+        "libutils",
+    ],
+}
+
+cc_library_static {
+    name: "android.hardware.bluetooth-hci-usb",
+    vendor: true,
+    defaults: ["hidl_defaults"],
+    srcs: [
+        "hci_packetizer.cc",
+        "hci_protocol.cc",
+        "h4_protocol_usb.cc",
         "mct_protocol.cc",
     ],
     export_include_dirs: ["."],
