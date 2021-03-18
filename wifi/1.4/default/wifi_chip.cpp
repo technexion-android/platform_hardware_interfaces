@@ -825,6 +825,24 @@ std::pair<WifiStatus, sp<IWifiApIface>> WifiChip::createApIfaceInternal() {
         return {createWifiStatus(WifiStatusCode::ERROR_NOT_AVAILABLE), {}};
     }
     std::string ifname = allocateApIfaceName();
+
+    wifi_system::InterfaceTool iface_tool_;
+    bool up = iface_tool_.GetUpState( ifname.c_str() );
+    if(up) {
+        iface_tool_.SetUpState( ifname.c_str(), false );
+
+        int check_count =0;
+        do_check:
+            usleep(100000);
+            LOG(INFO) << "Let " << ifname.c_str()<< " interface completely down";
+            up = iface_tool_.GetUpState( ifname.c_str() );
+            check_count ++;
+            if (check_count == 5)
+                return {createWifiStatus(WifiStatusCode::ERROR_NOT_AVAILABLE), {}};
+            else if (up)
+                goto do_check;
+    }
+
     legacy_hal::wifi_error legacy_status =
         legacy_hal_.lock()->createVirtualInterface(
             ifname,
