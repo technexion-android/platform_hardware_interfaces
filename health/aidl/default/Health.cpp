@@ -22,6 +22,7 @@
 #include <android/binder_process.h>
 #include <android/hardware/health/translate-ndk.h>
 #include <health/utils.h>
+#include <cutils/properties.h>
 
 #include "LinkedCallback.h"
 #include "health-convert.h"
@@ -282,7 +283,11 @@ ndk::ScopedAStatus Health::update() {
         return ndk::ScopedAStatus::fromServiceSpecificErrorWithMessage(
                 IHealth::STATUS_UNKNOWN, res.getDescription().c_str());
     }
-    battery_monitor_.logValues();
+
+    //battery_monitor_.logValues();
+    if(property_get_bool("vendor.battery.status.msg", true)) {
+        battery_monitor_.logValues();
+    }
     OnHealthInfoChanged(health_info);
     return ndk::ScopedAStatus::ok();
 }
