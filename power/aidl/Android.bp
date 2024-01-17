@@ -71,6 +71,9 @@ aidl_interface {
         },
     ],
     frozen: false,
+
+    min_sdk_version: "34",
+
 }
 
 power_version = "android.hardware.power-V6"
