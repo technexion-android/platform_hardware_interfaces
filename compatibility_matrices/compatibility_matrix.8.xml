@@ -247,14 +247,6 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <hal format="hidl" optional="true">
-        <name>android.hardware.graphics.composer</name>
-        <version>2.1-4</version>
-        <interface>
-            <name>IComposer</name>
-            <instance>default</instance>
-        </interface>
-	</hal>
     <hal format="aidl">
         <name>android.hardware.graphics.composer3</name>
         <version>2</version>
