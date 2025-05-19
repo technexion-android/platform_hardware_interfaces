@@ -78,6 +78,7 @@ aidl_interface {
         },
 
     ],
+    min_sdk_version: "34",
     frozen: true,
 }
 
