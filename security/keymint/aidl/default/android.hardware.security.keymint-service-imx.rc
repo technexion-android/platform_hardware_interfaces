@@ -1,2 +1,4 @@
 service vendor.keymint-software /vendor/bin/hw/android.hardware.security.keymint-service-imx
+    class early_hal
     user nobody
+    disabled
