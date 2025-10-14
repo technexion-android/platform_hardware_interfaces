@@ -60,6 +60,9 @@ cc_library_shared {
         "vendor/nxp/fsl-proprietary/include/",
         "vendor/nxp/imx_opencl_converter/ghdr",
         "frameworks/native/headers/media_plugin",
+        "frameworks/av/media/codec2/vndk/include",
+        "frameworks/av/media/codec2/core/include",
+        "vendor/nxp/fsl-proprietary/include",
     ],
     shared_libs: [
         "android.hardware.camera.common-V1-ndk",
@@ -123,6 +126,9 @@ cc_defaults {
         "vendor/nxp-opensource/imx/opencl-2d",
         "vendor/nxp/imx_opencl_converter/ghdr",
         "frameworks/native/headers/media_plugin",
+        "frameworks/av/media/codec2/vndk/include",
+        "frameworks/av/media/codec2/core/include",
+        "vendor/nxp/fsl-proprietary/include",
     ],
 }
 
