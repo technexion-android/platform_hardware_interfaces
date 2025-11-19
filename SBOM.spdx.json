@@ -2,20 +2,20 @@
   "SPDXID": "SPDXRef-DOCUMENT",
   "spdxVersion": "SPDX-2.3",
   "creationInfo": {
-    "created": "2025-08-27T01:56:23Z",
+    "created": "2025-11-19T01:49:10Z",
     "creators": [
       "Organization: NXP"
     ],
     "licenseListVersion": "3.20"
   },
-  "name": "aosp_platform_hardware_interfaces-android-16.0.0_1.0.0",
+  "name": "aosp_platform_hardware_interfaces-android-16.0.0_1.2.0",
   "dataLicense": "CC0-1.0",
-  "documentNamespace": "https://nxp.com/spdx/96c856a2-ced4-49d2-8410-7e4acc793125",
+  "documentNamespace": "https://nxp.com/spdx/1b44b2f6-ba3a-4119-88a0-30bae84c6ceb",
   "packages": [
     {
-      "SPDXID": "SPDXRef-package-96c856a2-ced4-49d2-8410-7e4acc793125",
+      "SPDXID": "SPDXRef-package-1b44b2f6-ba3a-4119-88a0-30bae84c6ceb",
       "name": "aosp_platform_hardware_interfaces",
-      "versionInfo": "android-16.0.0_1.0.0",
+      "versionInfo": "android-16.0.0_1.2.0",
       "licenseConcluded": "(Apache-2.0)",
       "licenseDeclared": "(Apache-2.0)",
       "downloadLocation": "https://github.com/nxp-imx-android/aosp_platform_hardware_interfaces",
@@ -25,7 +25,7 @@
       "filesAnalyzed": false
     },
     {
-      "SPDXID": "SPDXRef-package-ed2f0a66-26d3-4694-9e60-ea6d99a148ba",
+      "SPDXID": "SPDXRef-package-37198f06-7dbf-42b9-b986-b48a2a76a6eb",
       "name": "platform-hardware-interfaces",
       "versionInfo": "android-16.0.0_r1",
       "licenseConcluded": "Apache-2.0",
@@ -37,7 +37,7 @@
       "externalRefs": [
         {
           "referenceCategory": "OTHER",
-          "referenceLocator": "4887641e-73b2-4b10-8a6d-56bebb0719f9",
+          "referenceLocator": "6914ee23-9536-4ff0-aefe-51e20c590214",
           "referenceType": "BlackDuck-ComponentOrigin"
         }
       ],
@@ -48,12 +48,12 @@
     {
       "spdxElementId": "SPDXRef-DOCUMENT",
       "relationshipType": "DESCRIBES",
-      "relatedSpdxElement": "SPDXRef-package-96c856a2-ced4-49d2-8410-7e4acc793125"
+      "relatedSpdxElement": "SPDXRef-package-1b44b2f6-ba3a-4119-88a0-30bae84c6ceb"
     },
     {
-      "spdxElementId": "SPDXRef-package-96c856a2-ced4-49d2-8410-7e4acc793125",
+      "spdxElementId": "SPDXRef-package-1b44b2f6-ba3a-4119-88a0-30bae84c6ceb",
       "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-package-ed2f0a66-26d3-4694-9e60-ea6d99a148ba"
+      "relatedSpdxElement": "SPDXRef-package-37198f06-7dbf-42b9-b986-b48a2a76a6eb"
     }
   ]
 }
